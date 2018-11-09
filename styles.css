@@ -13,13 +13,14 @@ body {
     height: 16rem;
     float: left;
     margin: 0 0.5rem 0.5rem 0;
-    background: #FFF0BF;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    xbackground: #FFF0BF;
+    xbox-shadow: 0 0 5px rgba(0,0,0,0.3);
     text-decoration: none;
     color: initial;
 }
+.card.card-file,
 .card-file {
-    background: #FFF;
+    xbackground: #FFF;
 }
 
 .card-folder:hover {
@@ -37,20 +38,23 @@ body {
 .card-folder .card-body-main-image-wrapper {
     text-align: center;
     line-height: 15rem;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .preview-thumb-wrapper {
     width: 6rem;
     height: 6rem;
     float: left;
-    border: 1px solid #CCC;
     
     text-align: center;
     line-height: 100px;
     
     padding: 0.2rem;
     margin: 0 0.5rem 0.5rem 0;
-    background: #EEE;
+    xborder: 1px solid #CCC;
+    xbackground: #EEE;
     box-sizing: border-box;
 }
 
@@ -59,16 +63,27 @@ body {
     vertical-align: middle;
 }
 
+.preview-thumb-wrapper video,
 .preview-thumb-wrapper img {
     max-width: 100%;
     max-height: 100%;
     margin: 0;
     padding: 0;
-    vertical-align: middle;
+    vertical-align: top;
     border-radius: 2px;
+    xbackground: #EEE;
+}
+.preview-thumb-wrapper video {
+    background: #333;
 }
 
 .card-folder .main-image {
     max-width: 100%;
     max-height: 100%;
+    background: #EEE;
+    padding: 2px;
+}
+
+.card-folder video.main-image {
+    background: #333;
 }
