@@ -6,6 +6,10 @@ body {
     padding-bottom: 1rem;
 }
 
+.fa-folder { 
+    color: #FBD579;
+}
+
 .card-folder {
     padding: 0.5rem;
     box-sizing: border-box;
@@ -17,10 +21,6 @@ body {
     xbox-shadow: 0 0 5px rgba(0,0,0,0.3);
     text-decoration: none;
     color: initial;
-}
-.card.card-file,
-.card-file {
-    xbackground: #FFF;
 }
 
 .card-folder:hover {
@@ -49,11 +49,11 @@ body {
     float: left;
     
     text-align: center;
-    line-height: 100px;
+    line-height: 6rem;
     
-    padding: 0.2rem;
+    padding: 0rem;
     margin: 0 0.5rem 0.5rem 0;
-    xborder: 1px solid #CCC;
+    /* xborder: 1px solid #CCC; */
     xbackground: #EEE;
     box-sizing: border-box;
 }
@@ -69,7 +69,7 @@ body {
     max-height: 100%;
     margin: 0;
     padding: 0;
-    vertical-align: top;
+    /* vertical-align: top; */
     border-radius: 2px;
     xbackground: #EEE;
 }
