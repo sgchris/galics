@@ -14,11 +14,12 @@
     </style>
 
     <?php if (file_exists(__DIR__.'/styles.css')) { ?>
-    <link rel="stylesheet" href="styles.css">
+        <?php updateInlineStyles(); ?>
+        <link rel="stylesheet" href="styles.css">
     <?php } else { ?>
-    <style>
-    body{background:#eee}.main-wrapper{padding-top:1rem;padding-bottom:1rem}.fa-folder{color:#fbd579}.card-folder{padding:.5rem;box-sizing:border-box;width:14.5rem;height:16rem;float:left;margin:0 .5rem .5rem 0;xbackground:#fff0bf;xbox-shadow:0 0 5px rgba(0,0,0,.3);text-decoration:none;color:initial}.card-folder:hover{text-decoration:none;color:initial}.card-folder .card-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-folder .card-body{padding:0}.card-folder .card-body-main-image-wrapper{text-align:center;line-height:15rem;max-height:100%;max-width:100%;overflow:hidden}.preview-thumb-wrapper{width:6rem;height:6rem;float:left;text-align:center;line-height:6rem;padding:0;margin:0 .5rem .5rem 0;xbackground:#eee;box-sizing:border-box}.preview-thumb-wrapper i{font-size:4rem;vertical-align:middle}.preview-thumb-wrapper img,.preview-thumb-wrapper video{max-width:100%;max-height:100%;margin:0;padding:0;border-radius:2px;xbackground:#eee}.preview-thumb-wrapper video{background:#333}.card-folder .main-image{max-width:100%;max-height:100%;background:#eee;padding:2px}.card-folder video.main-image{background:#333}
-    </style>
+    <style inline-style-last-updated="1542887509">
+	body{background:#EEE}.main-wrapper{padding-top:1rem;padding-bottom:1rem}.fa-folder{ color:#FBD579}.card-folder{padding:0.5rem;box-sizing:border-box;width:14.5rem;height:16rem;float:left;margin:0 0.5rem 0.5rem 0;xbackground:#FFF0BF;xbox-shadow:0 0 5px rgba(0,0,0,0.3);text-decoration:none;color:initial}.card-folder:hover{text-decoration:none;color:initial}.card-folder .card-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-folder .card-body{padding:0}.card-folder .card-body-main-image-wrapper{text-align:center;line-height:15rem;max-height:100%;max-width:100%;overflow:hidden}.preview-thumb-wrapper{width:6rem;height:6rem;float:left;text-align:center;line-height:6rem;padding:0rem;margin:0 0.5rem 0.5rem 0;/* xborder:1px solid #CCC; */background:#f5f6f7;box-sizing:border-box}.preview-thumb-wrapper i{font-size:4rem;vertical-align:middle}.preview-thumb-wrapper video,.preview-thumb-wrapper img{max-width:100%;max-height:100%;margin:0;padding:0;/* vertical-align:top; */border-radius:2px;xbackground:#EEE}.preview-thumb-wrapper video{background:#333}.card-folder .main-image{max-width:100%;max-height:100%;background:#EEE;padding:2px}.card-folder video.main-image{background:#333}
+	</style>
     <?php } ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -171,3 +172,38 @@ $relativeDir = trim(str_replace(__DIR__, '', $dir), '/');
 
 </body>
 </html>
+<?php
+
+function updateInlineStyles() {
+    $stylesFile = __DIR__.'/styles.css';
+    if (!file_exists($stylesFile)) {
+        return;
+    }
+
+    // get file last mod
+    $lastModified = filemtime($stylesFile);
+
+    // get file last mod from this file (index.php)
+    $foundMatch = preg_match('#inline\-style\-last\-updated="(.*?)"#i', file_get_contents(__FILE__), $matches);
+    if (!$foundMatch) {
+        return;
+    }
+    $currentLastModified = $matches[1];
+
+    // if they don't match, update this (index.php) file
+    if ($currentLastModified != $lastModified) {
+        $stylesFileContent = file_get_contents($stylesFile);
+        $stylesFileContent = str_replace(': ', ':', $stylesFileContent);
+        $stylesFileContent = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $stylesFileContent);
+        $stylesFileContent = str_replace([' {', ';}'], ['{', '}'], $stylesFileContent);
+        
+
+        $newFileContent = preg_replace(
+            '#inline\-style\-last\-updated="(.*?)"[^>]*>(.*?)</style#smi', 
+            "inline-style-last-updated=\"{$lastModified}\">\n\t{$stylesFileContent}\n\t</style", 
+            file_get_contents(__FILE__)
+        );
+
+        file_put_contents(__FILE__, $newFileContent);
+    }
+}

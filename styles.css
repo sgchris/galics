@@ -54,7 +54,7 @@ body {
     padding: 0rem;
     margin: 0 0.5rem 0.5rem 0;
     /* xborder: 1px solid #CCC; */
-    xbackground: #EEE;
+    background: #f5f6f7;
     box-sizing: border-box;
 }
 
