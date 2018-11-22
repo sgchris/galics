@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.3.0/video-js.css">
+
     <!-- <link rel="stylesheet" href="magnific-popup.css"> -->
     <style>
     .mfp-bg{top:0;left:0;width:100%;height:100%;z-index:1042;overflow:hidden;position:fixed;background:#0b0b0b;opacity:.8}.mfp-wrap{top:0;left:0;width:100%;height:100%;z-index:1043;position:fixed;outline:none!important;-webkit-backface-visibility:hidden}.mfp-container{text-align:center;position:absolute;width:100%;height:100%;left:0;top:0;padding:0 8px;box-sizing:border-box}.mfp-container:before{content:'';display:inline-block;height:100%;vertical-align:middle}.mfp-align-top .mfp-container:before{display:none}.mfp-content{position:relative;display:inline-block;vertical-align:middle;margin:0 auto;text-align:left;z-index:1045}.mfp-inline-holder .mfp-content,.mfp-ajax-holder .mfp-content{width:100%;cursor:auto}.mfp-ajax-cur{cursor:progress}.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close{cursor:-moz-zoom-out;cursor:-webkit-zoom-out;cursor:zoom-out}.mfp-zoom{cursor:pointer;cursor:-webkit-zoom-in;cursor:-moz-zoom-in;cursor:zoom-in}.mfp-auto-cursor .mfp-content{cursor:auto}.mfp-close,.mfp-arrow,.mfp-preloader,.mfp-counter{-webkit-user-select:none;-moz-user-select:none;user-select:none}.mfp-loading.mfp-figure{display:none}.mfp-hide{display:none!important}.mfp-preloader{color:#CCC;position:absolute;top:50%;width:auto;text-align:center;margin-top:-.8em;left:8px;right:8px;z-index:1044}.mfp-preloader a{color:#CCC}.mfp-preloader a:hover{color:#FFF}.mfp-s-ready .mfp-preloader{display:none}.mfp-s-error .mfp-content{display:none}button.mfp-close,button.mfp-arrow{overflow:visible;cursor:pointer;background:transparent;border:0;-webkit-appearance:none;display:block;outline:none;padding:0;z-index:1046;box-shadow:none;touch-action:manipulation}button::-moz-focus-inner{padding:0;border:0}.mfp-close{width:44px;height:44px;line-height:44px;position:absolute;right:0;top:0;text-decoration:none;text-align:center;opacity:.65;padding:0 0 18px 10px;color:#FFF;font-style:normal;font-size:28px;font-family:Arial,Baskerville,monospace}.mfp-close:hover,.mfp-close:focus{opacity:1}.mfp-close:active{top:1px}.mfp-close-btn-in .mfp-close{color:#333}.mfp-image-holder .mfp-close,.mfp-iframe-holder .mfp-close{color:#FFF;right:-6px;text-align:right;padding-right:6px;width:100%}.mfp-counter{position:absolute;top:0;right:0;color:#CCC;font-size:12px;line-height:18px;white-space:nowrap}.mfp-arrow{position:absolute;opacity:.65;margin:0;top:50%;margin-top:-55px;padding:0;width:90px;height:110px;-webkit-tap-highlight-color:transparent}.mfp-arrow:active{margin-top:-54px}.mfp-arrow:hover,.mfp-arrow:focus{opacity:1}.mfp-arrow:before,.mfp-arrow:after{content:'';display:block;width:0;height:0;position:absolute;left:0;top:0;margin-top:35px;margin-left:35px;border:medium inset transparent}.mfp-arrow:after{border-top-width:13px;border-bottom-width:13px;top:8px}.mfp-arrow:before{border-top-width:21px;border-bottom-width:21px;opacity:.7}.mfp-arrow-left{left:0}.mfp-arrow-left:after{border-right:17px solid #FFF;margin-left:31px}.mfp-arrow-left:before{margin-left:25px;border-right:27px solid #3F3F3F}.mfp-arrow-right{right:0}.mfp-arrow-right:after{border-left:17px solid #FFF;margin-left:39px}.mfp-arrow-right:before{border-left:27px solid #3F3F3F}.mfp-iframe-holder{padding-top:40px;padding-bottom:40px}.mfp-iframe-holder .mfp-content{line-height:0;width:100%;max-width:900px}.mfp-iframe-holder .mfp-close{top:-40px}.mfp-iframe-scaler{width:100%;height:0;overflow:hidden;padding-top:56.25%}.mfp-iframe-scaler iframe{position:absolute;display:block;top:0;left:0;width:100%;height:100%;box-shadow:0 0 8px rgba(0,0,0,.6);background:#000}img.mfp-img{width:auto;max-width:100%;height:auto;display:block;line-height:0;box-sizing:border-box;padding:40px 0 40px;margin:0 auto}.mfp-figure{line-height:0}.mfp-figure:after{content:'';position:absolute;left:0;top:40px;bottom:40px;display:block;right:0;width:auto;height:auto;z-index:-1;box-shadow:0 0 8px rgba(0,0,0,.6);background:#444}.mfp-figure small{color:#BDBDBD;display:block;font-size:12px;line-height:14px}.mfp-figure figure{margin:0}.mfp-bottom-bar{margin-top:-36px;position:absolute;top:100%;left:0;width:100%;cursor:auto}.mfp-title{text-align:left;line-height:18px;color:#F3F3F3;word-wrap:break-word;padding-right:36px}.mfp-image-holder .mfp-content{max-width:100%}.mfp-gallery .mfp-image-holder .mfp-figure{cursor:pointer}@media screen and (max-width:800px) and (orientation:landscape),screen and (max-height:300px){.mfp-img-mobile .mfp-image-holder{padding-left:0;padding-right:0}.mfp-img-mobile img.mfp-img{padding:0}.mfp-img-mobile .mfp-figure:after{top:0;bottom:0}.mfp-img-mobile .mfp-figure small{display:inline;margin-left:5px}.mfp-img-mobile .mfp-bottom-bar{background:rgba(0,0,0,.6);bottom:0;margin:0;top:auto;padding:3px 5px;position:fixed;box-sizing:border-box}.mfp-img-mobile .mfp-bottom-bar:empty{padding:0}.mfp-img-mobile .mfp-counter{right:5px;top:3px}.mfp-img-mobile .mfp-close{top:0;right:0;width:35px;height:35px;line-height:35px;background:rgba(0,0,0,.6);position:fixed;text-align:center;padding:0}}@media all and (max-width:900px){.mfp-arrow{-webkit-transform:scale(.75);transform:scale(.75)}.mfp-arrow-left{-webkit-transform-origin:0;transform-origin:0}.mfp-arrow-right{-webkit-transform-origin:100%;transform-origin:100%}.mfp-container{padding-left:6px;padding-right:6px}}
@@ -17,14 +18,16 @@
         <?php updateInlineStyles(); ?>
         <link rel="stylesheet" href="styles.css">
     <?php } else { ?>
-    <style inline-style-last-updated="1542887509">
-	body{background:#EEE}.main-wrapper{padding-top:1rem;padding-bottom:1rem}.fa-folder{ color:#FBD579}.card-folder{padding:0.5rem;box-sizing:border-box;width:14.5rem;height:16rem;float:left;margin:0 0.5rem 0.5rem 0;xbackground:#FFF0BF;xbox-shadow:0 0 5px rgba(0,0,0,0.3);text-decoration:none;color:initial}.card-folder:hover{text-decoration:none;color:initial}.card-folder .card-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-folder .card-body{padding:0}.card-folder .card-body-main-image-wrapper{text-align:center;line-height:15rem;max-height:100%;max-width:100%;overflow:hidden}.preview-thumb-wrapper{width:6rem;height:6rem;float:left;text-align:center;line-height:6rem;padding:0rem;margin:0 0.5rem 0.5rem 0;/* xborder:1px solid #CCC; */background:#f5f6f7;box-sizing:border-box}.preview-thumb-wrapper i{font-size:4rem;vertical-align:middle}.preview-thumb-wrapper video,.preview-thumb-wrapper img{max-width:100%;max-height:100%;margin:0;padding:0;/* vertical-align:top; */border-radius:2px;xbackground:#EEE}.preview-thumb-wrapper video{background:#333}.card-folder .main-image{max-width:100%;max-height:100%;background:#EEE;padding:2px}.card-folder video.main-image{background:#333}
+    <style inline-style-last-updated="1542901539">
+	body{background:#EEE}.main-wrapper{padding-top:1rem;padding-bottom:1rem}.fa-folder{ color:#FBD579}video{max-width:100%;vertical-align:middle}.card-body-main-image-video-wrapper-curtain{cursor:pointer;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,0.1);z-index:10}.popup-curtain{width:100%;height:100%;position:fixed;top:0;bottom:0;left:0;right:0;background:#FFF;opacity:0.75;z-index:1001}.popup-content{position:fixed;top:10%;bottom:10%;left:10%;right:10%;padding:10px;background:#FFF;border:1px solid #CCC;box-shadow:0 0 10px rgba(0,0,0,0.3);opacity:1;z-index:1002}.card-folder{padding:0.5rem;box-sizing:border-box;width:14.5rem;height:16rem;float:left;margin:0 0.5rem 0.5rem 0;text-decoration:none;color:initial}.card-folder:hover{text-decoration:none;color:initial}.card-folder .card-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-folder .card-body{padding:0;position:relative}.card-folder .card-body-main-image-wrapper{text-align:center;line-height:15rem;max-height:100%;max-width:100%;overflow:hidden}.preview-thumb-wrapper{width:6rem;height:6rem;float:left;text-align:center;line-height:6rem;padding:0rem;margin:0 0.5rem 0.5rem 0;/* xborder:1px solid #CCC; */background:#f5f6f7;box-sizing:border-box}.preview-thumb-wrapper i{font-size:4rem;vertical-align:middle}.preview-thumb-wrapper video,.preview-thumb-wrapper img{max-width:100%;max-height:100%;margin:0;padding:0;/* vertical-align:top; */border-radius:2px}.card-folder .main-image{max-width:100%;max-height:100%;background:#EEE;padding:2px}.card-folder video.main-image{background:#333;vertical-align:middle}
 	</style>
     <?php } ?>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>window.HELP_IMPROVE_VIDEOJS = false;</script>
+    <script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
 
     <!-- <script src="jquery.magnific-popup.min.js"></script> -->
     <script>
@@ -32,14 +35,62 @@
     </script>
 
     <script>
+        function showModal(htmlContent) {
+            // add the curtain
+            $('.popup-curtain').remove();
+            $popupCurtain = $('<div class="popup-curtain"></div>');
+            // on click remove the popup
+            $popupCurtain.on('click', function() {
+                $('.popup-curtain').remove();
+                $('.popup-content').remove();
+            })
+            // add the curtain to the body
+            $('body').append($popupCurtain);
+
+            $('.popup-content').remove();
+            $popupContent = $('<div class="popup-content"></div>').html(htmlContent);
+            $('body').append($popupContent);
+        }
+
         $(function() {
-            $('.card-file').magnificPopup({
+            $('.card-file-image').magnificPopup({
                 type: 'image',
                 gallery:{
                     enabled:true
                 }
                 // other options
                 // ..
+            });
+
+            $('.card-body-main-image-video-wrapper-curtain').on('click', function(event) {
+                event.preventDefault();
+                var $this = $(this);
+                var videoSrc = $this.attr('video-src');
+                var videoType = $this.attr('video-type');
+                var videoId = 'myvid-' + Math.round(Math.random() * 10000);
+                console.log('videoSrc', videoSrc, 'videoType', videoType, 'videoId', videoId);
+                $video = $('<video>')
+                    .attr('controls', true)
+                    .attr('preload', true)
+                    .attr('id', videoId)
+                    .css('max-width', '100%')
+                    .css('max-height', '100%')
+                    .addClass('video-js')
+                    .append(
+                        $('<source>')
+                            .attr('src', videoSrc)
+                            .attr('type', videoType)
+                    );
+                showModal($video[0].outerHTML);
+                setTimeout(function() {
+                    var options = {
+                        controls: true,
+                        autoplay: true
+                    };
+                    var player = videojs(videoId, options);
+                });
+
+                return false;
             });
         });
     </script>
@@ -100,6 +151,12 @@ $relativeDir = trim(str_replace(__DIR__, '', $dir), '/');
                         ?><div class="preview-thumb-wrapper" itemsInFolder="<?php echo $itemsInFolder; ?>"><i class="fas fa-folder"></i></div><?php
                     }
                     
+                    // check if has videos
+                    if (count(glob($folder.'/*.{mp4,mpg,wmv,avi,webm}', GLOB_BRACE)) > 0) {
+                        $itemsInFolder++;
+                        ?><div class="preview-thumb-wrapper" itemsInFolder="<?php echo $itemsInFolder; ?>"><i class="fab fa-youtube" style="color: #007bff;"></i></div><?php
+                    }
+                    
                     $imageFiles = glob($folder.'/*.jpg');
                     if (count($imageFiles) > 0) {
                         foreach ($imageFiles as $i => $imageFile) {
@@ -113,25 +170,6 @@ $relativeDir = trim(str_replace(__DIR__, '', $dir), '/');
                             <?php
                         }
                     }
-
-                    if ($itemsInFolder < 4) {
-                        $videoFiles = glob($folder.'/*.{mp4,mpg,wmv,avi,webm}', GLOB_BRACE);
-                        if (count($videoFiles) > 0) {
-                            foreach ($videoFiles as $i => $videoFile) {
-                                if ($itemsInFolder >= 4) break;
-                                $itemsInFolder++;
-                                $videoUrl = ltrim(str_replace(__DIR__, '', $videoFile), '/');
-                                ?>
-                                <div class="preview-thumb-wrapper" itemsInFolder="<?php echo $itemsInFolder; ?>">
-                                    <video>
-                                        <source src="<?php echo $videoUrl; ?>" 
-                                            type="video/<?php echo pathinfo($videoFile, PATHINFO_EXTENSION); ?>">
-                                    </video>
-                                </div>
-                                <?php
-                            }
-                        }
-                    }
                     ?>
                 </div>
             </div>
@@ -142,23 +180,29 @@ $relativeDir = trim(str_replace(__DIR__, '', $dir), '/');
 
     <?php
     // display images
-    foreach (glob($dir.'/*.{jpg,gif,mp4,wmv,avi,webm,mpg}', GLOB_BRACE) as $imageFile) {
+    $filesList = array_merge(
+        glob($dir.'/*.{mp4,wmv,avi,webm,mpg}', GLOB_BRACE),
+        glob($dir.'/*.{jpg,gif}', GLOB_BRACE)
+    );
+    foreach ($filesList as $fileNum => $imageFile) {
         $imageFilerUrl = trim(str_replace(__DIR__, '', $imageFile), '/');
         $ext = pathinfo($imageFile, PATHINFO_EXTENSION);
         if (in_array($ext, ['wmv','mpg','mp4','webm'])) {
             ?>
             <div class="card card-folder card-file card-video">
-                <div class="card-body card-body-main-image-wrapper">
-                    <video controls class="main-image main-image-video">
-                        <source src="<?php echo $imageFilerUrl; ?>" 
-                            type="video/<?php echo $ext; ?>">
+                <div class="card-body card-body-main-image-wrapper card-body-main-image-video-wrapper">
+                    <div class="card-body-main-image-video-wrapper-curtain" video-src="<?php echo $imageFilerUrl; ?>" video-type="video/<?php echo $ext; ?>">
+                        <i class="fab fa-youtube" style="color: #Fff; opacity: 0.85; font-size: 2rem;"></i>
+                    </div>
+                    <video id="my-video-<?php echo $fileNum; ?>" controls class="main-image main-image-video" preload="auto" data-setup="{}">
+                        <source src="<?php echo $imageFilerUrl; ?>" type="video/<?php echo $ext; ?>">
                     </video>
                 </div>
         </div>
             <?php
         } else {
             ?>
-            <a href="<?php echo $imageFilerUrl; ?>" class="card card-folder card-file">
+            <a href="<?php echo $imageFilerUrl; ?>" class="card card-folder card-file card-file-image">
                 <div class="card-body card-body-main-image-wrapper">
                     <img src="<?php echo $imageFilerUrl; ?>" class="main-image" />
                 </div>
