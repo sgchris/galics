@@ -1,4 +1,29 @@
+<?php
 
+// case insensitive "glob" (CI is applied only on the extension)
+function ciGlob($pat, $flags = 0)
+{
+    $lastDot = strrpos($pat, '.');
+    if ($lastDot === false) {
+        return glob($pat, flags); 
+    }
+    $p = substr($pat, 0, $lastDot);
+	for($x=($lastDot + 1); $x<strlen($pat); $x++)
+	{
+		$c = substr($pat, $x, 1);
+		if( preg_match("/[^A-Za-z]/", $c) )
+		{
+			$p .= $c;
+			continue;
+		}
+		$a = strtolower($c);
+		$b = strtoupper($c);
+		$p .= "[{$a}{$b}]";
+    }
+    
+	return glob($p, $flags);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +43,7 @@
         <?php updateInlineStyles(); ?>
         <link rel="stylesheet" href="styles.css">
     <?php } else { ?>
-    <style inline-style-last-updated="1542901857">
+    <style inline-style-last-updated="1542914530">
 	body{background:#EEE}.main-wrapper{padding-top:1rem;padding-bottom:1rem}.fa-folder{ color:#FBD579}video{max-width:100%;vertical-align:middle}.card-body-main-image-video-wrapper-curtain{cursor:pointer;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(0,0,0,0.1);z-index:10}.popup-curtain{width:100%;height:100%;position:fixed;top:0;bottom:0;left:0;right:0;background:#FFF;opacity:0.75;z-index:1001}.popup-content{position:fixed;top:5%;bottom:5%;left:10%;right:10%;padding:10px;background:#FFF;border:1px solid #CCC;box-shadow:0 0 10px rgba(0,0,0,0.3);opacity:1;z-index:1002}.card-folder{padding:0.5rem;box-sizing:border-box;width:14.5rem;height:16rem;float:left;margin:0 0.5rem 0.5rem 0;text-decoration:none;color:initial}.card-folder:hover{text-decoration:none;color:initial}.card-folder .card-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-folder .card-body{padding:0;position:relative}.card-folder .card-body-main-image-wrapper{text-align:center;line-height:15rem;max-height:100%;max-width:100%;overflow:hidden}.preview-thumb-wrapper{width:6rem;height:6rem;float:left;text-align:center;line-height:6rem;padding:0rem;margin:0 0.5rem 0.5rem 0;/* xborder:1px solid #CCC; */background:#f5f6f7;box-sizing:border-box}.preview-thumb-wrapper i{font-size:4rem;vertical-align:middle}.preview-thumb-wrapper video,.preview-thumb-wrapper img{max-width:100%;max-height:100%;margin:0;padding:0;/* vertical-align:top; */border-radius:2px}.card-folder .main-image{max-width:100%;max-height:100%;background:#EEE;padding:2px}.card-folder video.main-image{background:#333;vertical-align:middle}
 	</style>
     <?php } ?>
@@ -152,12 +177,12 @@ $relativeDir = trim(str_replace(__DIR__, '', $dir), '/');
                     }
                     
                     // check if has videos
-                    if (count(glob($folder.'/*.{mp4,mpg,wmv,avi,webm}', GLOB_BRACE)) > 0) {
+                    if (count(ciGlob($folder.'/*.{mp4,mpg,wmv,avi,webm}', GLOB_BRACE)) > 0) {
                         $itemsInFolder++;
                         ?><div class="preview-thumb-wrapper" itemsInFolder="<?php echo $itemsInFolder; ?>"><i class="fab fa-youtube" style="color: #007bff;"></i></div><?php
                     }
                     
-                    $imageFiles = glob($folder.'/*.jpg');
+                    $imageFiles = ciGlob($folder.'/*.jpg');
                     if (count($imageFiles) > 0) {
                         foreach ($imageFiles as $i => $imageFile) {
                             if ($itemsInFolder >= 4) break;
@@ -181,8 +206,8 @@ $relativeDir = trim(str_replace(__DIR__, '', $dir), '/');
     <?php
     // display images
     $filesList = array_merge(
-        glob($dir.'/*.{mp4,wmv,avi,webm,mpg}', GLOB_BRACE),
-        glob($dir.'/*.{jpg,gif}', GLOB_BRACE)
+        ciGlob($dir.'/*.{mp4,wmv,avi,webm,mpg}', GLOB_BRACE),
+        ciGlob($dir.'/*.{jpg,gif}', GLOB_BRACE)
     );
     foreach ($filesList as $fileNum => $imageFile) {
         $imageFilerUrl = trim(str_replace(__DIR__, '', $imageFile), '/');
